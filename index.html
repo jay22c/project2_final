@@ -293,6 +293,22 @@
               <td>information</td>
               <td>text</td>
             </tr> -->
+            <scripts> 
+
+              function showDetails(row) {
+                
+                var cells = row.cells; // 각 열에 대한 배열
+                var name = cells[0].textContent;
+                var relationship = cells[1].textContent;
+                var phoneNumber = cells[2].textContent;
+                var email = cells[3].textContent;
+                var birthday = cells[4].textContent;
+            
+                
+                var url = 'view.html?name=' + name + '&relationship=' + relationship + '&phoneNumber=' + phoneNumber + '&email=' + email + '&birthday=' + birthday;
+                window.location.href = url;
+              }
+            </scripts>
           </tbody>
         </table>
       </div>
@@ -300,28 +316,30 @@
   </div>
 </div>
 
-<scripts> 
 
-  function showDetails(row) {
-    
-    var cells = row.cells; // 각 열에 대한 배열
-    var name = cells[0].textContent;
-    var relationship = cells[1].textContent;
-    var phoneNumber = cells[2].textContent;
-    var email = cells[3].textContent;
-    var birthday = cells[4].textContent;
-
-    
-    var url = 'view.html?name=' + name + '&relationship=' + relationship + '&phoneNumber=' + phoneNumber + '&email=' + email + '&birthday=' + birthday;
-    window.location.href = url;
-  }
-</scripts>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.6/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
-      
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
         <script src="dashboard.js"></script>
+        <script>
+          function showDetails(row) {
+              var cells = row.cells;
+              var name = cells[0].textContent;
+              var relationship = cells[1].textContent;
+              var phoneNumber = cells[2].textContent;
+              var email = cells[3].textContent;
+              var birthday = cells[4].textContent;
+          
+              // 정보를 query string으로 전달하면서 view.html로 이동
+              var url = 'view.html?name=' + encodeURIComponent(name) +
+                        '&relationship=' + encodeURIComponent(relationship) +
+                        '&phoneNumber=' + encodeURIComponent(phoneNumber) +
+                        '&email=' + encodeURIComponent(email) +
+                        '&birthday=' + encodeURIComponent(birthday);
+              window.location.href = url;
+          }
+        </script>
   </body>
 </html>

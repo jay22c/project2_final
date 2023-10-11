@@ -1,28 +1,42 @@
 <!doctype html>
 <html lang="en">
-<head>
-  
-</head>
-<body>
-  <h1>상세 정보</h1>
-  <p>이름: <span id="name"></span></p>
-  <p>관계: <span id="relationship"></span></p>
-  <p>전화번호: <span id="phoneNumber"></span></p>
-  <p>이메일: <span id="email"></span></p>
-  <p>생일: <span id="birthday"></span></p>
-  
-  <script>
-    
-    var urlParams = new URLSearchParams(window.location.search);
-    document.getElementById('name').textContent = urlParams.get('name');
-    document.getElementById('relationship').textContent = urlParams.get('relationship');
-    document.getElementById('phoneNumber').textContent = urlParams.get('phoneNumber');
-    document.getElementById('email').textContent = urlParams.get('email');
-    document.getElementById('birthday').textContent = urlParams.get('birthday');
-  </script>
-</body>
-</html>
+  <head>
+   
+  </head>
+  <body>
+    <h1>Contact Details</h1>
+    <div id="contact-details">
+      
+    </div>
 
+    <script>
+      
+      function getQueryVariable(variable) {
+          var query = window.location.search.substring(1);
+          var vars = query.split('&');
+          for (var i = 0; i < vars.length; i++) {
+              var pair = vars[i].split('=');
+              if (decodeURIComponent(pair[0]) == variable) {
+                  return decodeURIComponent(pair[1]);
+              }
+          }
+          return null;
+      }
 
+      
+      var name = getQueryVariable('name');
+      var relationship = getQueryVariable('relationship');
+      var phoneNumber = getQueryVariable('phoneNumber');
+      var email = getQueryVariable('email');
+      var birthday = getQueryVariable('birthday');
 
-
+      
+      var contactDetails = document.getElementById('contact-details');
+      contactDetails.innerHTML = '<p><strong>Name:</strong> ' + name + '</p>' +
+                                  '<p><strong>Relationship:</strong> ' + relationship + '</p>' +
+                                  '<p><strong>Phone Number:</strong> ' + phoneNumber + '</p>' +
+                                  '<p><strong>Email:</strong> ' + email + '</p>' +
+                                  '<p><strong>Birthday:</strong> ' + birthday + '</p>';
+    </script>
+  </body>
+  </html>
