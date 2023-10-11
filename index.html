@@ -166,7 +166,7 @@
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
-            <tr>
+            <tr onclick="showDetails(this)">
               <th>이름</th>
               <th>관계</th>
               <th>전화번호</th>
@@ -175,70 +175,70 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>김철수</td>
               <td>초등학교 동창</td>
               <td>010-1234-5678</td>
               <td>silverwater@never.com</td>
               <td>2/13</td>
             </tr>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>김영희</td>
               <td>초등학교 동창</td>
               <td>010-2345-6789</td>
               <td>0heehee@never.com</td>
               <td>6/21</td>
             </tr>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>박영수</td>
               <td>초등학교 방과후 친구</td>
               <td>010-3456-7890</td>
               <td>reverseswim@never.com</td>
               <td>4/5</td>
             </tr>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>최영선</td>
               <td>중3 담임선생님</td>
               <td>010-4567-8901</td>
               <td></td>
               <td></td>
             </tr>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>최민희</td>
               <td>중학교 동창</td>
               <td>010-5678-9012</td>
               <td>minhee@never.com</td>
               <td>10/11</td>
             </tr>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>송현준</td>
               <td>영어학원 친구</td>
               <td>010-6789-0123</td>
               <td>hj0822@never.com</td>
               <td>8/22</td>
             </tr>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>송현지</td>
               <td>영어학원 친구</td>
               <td>010-7890-0123</td>
               <td>hyunzi@never.com</td>
               <td>8/22</td>
             </tr>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>이민상</td>
               <td>축구동호회</td>
               <td>010-8901-2345</td>
               <td></td>
               <td></td>
             </tr>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>이성빈</td>
               <td>축구동호회</td>
               <td>010-9012-3456</td>
               <td></td>
               <td></td>
             </tr>
-            <tr>
+            <tr onclick="showDetails(this)">
               <td>23 백우영</td>
               <td>팀 새내기</td>
               <td>010-0123-4567</td>
@@ -294,7 +294,22 @@
   </div>
 </div>
 
+<scripts> 
+  
+  function showDetails(row) {
+    
+    var cells = row.cells; // 각 열에 대한 배열
+    var name = cells[0].textContent;
+    var relationship = cells[1].textContent;
+    var phoneNumber = cells[2].textContent;
+    var email = cells[3].textContent;
+    var birthday = cells[4].textContent;
 
+    
+    var url = 'view.html?name=' + name + '&relationship=' + relationship + '&phoneNumber=' + phoneNumber + '&email=' + email + '&birthday=' + birthday;
+    window.location.href = url;
+  }
+</scripts>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.6/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
