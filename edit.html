@@ -22,12 +22,12 @@
       <label for="birthday">생일:</label><br>
       <input type="text" id="birthday" name="birthday" value="2/13"><br><br>
 
-      <input type="submit" value="저장">
+      <input type="submit" value="저장" onclick="return confirmSave();">
     </form>
 
     <script>
       function validateForm() {
-        // 필수 필드 확인
+        
         var name = document.getElementById("name").value;
         var relationship = document.getElementById("relationship").value;
         var phoneNumber = document.getElementById("phoneNumber").value;
@@ -41,5 +41,20 @@
         return true;
       }
     </script>
+
+    <script>
+        function confirmSave() {
+          var confirmResult = confirm("게시물을 수정할까요?");
+          
+          if (confirmResult) {
+           
+            return true;
+          } else {
+            
+            return false;
+          }
+        }
+      </script>
+
   </body>
 </html>
