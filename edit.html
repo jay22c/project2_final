@@ -61,16 +61,16 @@
   </body>
 </html> -->
 
-
+<!-- 
 <!doctype html>
 <html lang="en">
   <head>
    
   </head>
   <body>
-    <h1>상세 정보 편집</h1>
+    <h1>연락처 편집</h1>
     <div id="edit-contact-form">
-      <!-- 편집 양식을 여기에 추가할 수 있습니다. -->
+    
     </div>
 
     <button onclick="saveContact()">저장</button>
@@ -113,4 +113,89 @@
       }
     </script>
   </body>
+</html> -->
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>상세 정보 편집</h1>
+    <div id="edit-contact-form">
+        <p><strong>이름:</strong> <input type="text" id="name" value=""></p>
+        <p><strong>관계:</strong> <input type="text" id="relationship" value=""></p>
+        <p><strong>전화번호:</strong> <input type="text" id="phoneNumber" value=""></p>
+        <p><strong>이메일:</strong> <input type="text" id="email" value=""></p>
+        <p><strong>생일:</strong> <input type="text" id="birthday" value=""></p>
+    </div>
+
+    <button onclick="saveContact()">저장</button>
+
+    <script>
+      function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+          var pair = vars[i].split('=');
+          if (decodeURIComponent(pair[0]) == variable) {
+            return decodeURIComponent(pair[1]);
+          }
+        }
+        return null;
+      }
+
+      var name = getQueryVariable('name');
+      var relationship = getQueryVariable('relationship');
+      var phoneNumber = getQueryVariable('phoneNumber');
+      var email = getQueryVariable('email');
+      var birthday = getQueryVariable('birthday');
+
+      document.getElementById('name').value = name;
+      document.getElementById('relationship').value = relationship;
+      document.getElementById('phoneNumber').value = phoneNumber;
+      document.getElementById('email').value = email;
+      document.getElementById('birthday').value = birthday;
+
+      function saveContact() {
+        var editedName = document.getElementById('name').value;
+        var editedRelationship = document.getElementById('relationship').value;
+        var editedPhoneNumber = document.getElementById('phoneNumber').value;
+        var editedEmail = document.getElementById('email').value;
+        var editedBirthday = document.getElementById('birthday').value;
+
+       
+        if (validateForm()) {
+        
+          if (confirmSave()) {
+           
+            alert("수정된 데이터가 저장되었습니다.");
+          } else {
+            alert("수정된 데이터가 저장되지 않았습니다.");
+          }
+        }
+      }
+
+    
+      function confirmSave() {
+        var confirmResult = confirm("게시물을 수정할까요?");
+        return confirmResult;
+      }
+
+     
+      function validateForm() {
+        var editedName = document.getElementById('name').value;
+        var editedRelationship = document.getElementById('relationship').value;
+        var editedPhoneNumber = document.getElementById('phoneNumber').value;
+
+        if (editedName === "" || editedRelationship === "" || editedPhoneNumber === "") {
+          alert("이름, 관계, 전화번호는 필수 입력 사항입니다.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+</body>
 </html>
