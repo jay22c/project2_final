@@ -151,8 +151,14 @@
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <!-- <button type="button" class="btn btn-sm btn-outline-secondary"></button> -->
-            <button type="button" class="btn btn-sm btn-outline-secondary">추가</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="goToAddPage()">추가</button>
           </div>
+          <script>
+            function goToAddPage() {
+              // add.html 페이지로 이동합니다.
+              window.location.href = 'add.html';
+            }
+          </script>
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
             초성
@@ -295,7 +301,7 @@
 </div>
 
 <scripts> 
-  
+
   function showDetails(row) {
     
     var cells = row.cells; // 각 열에 대한 배열
