@@ -293,22 +293,7 @@
               <td>information</td>
               <td>text</td>
             </tr> -->
-            <scripts> 
-
-              function showDetails(row) {
-                
-                var cells = row.cells; // 각 열에 대한 배열
-                var name = cells[0].textContent;
-                var relationship = cells[1].textContent;
-                var phoneNumber = cells[2].textContent;
-                var email = cells[3].textContent;
-                var birthday = cells[4].textContent;
             
-                
-                var url = 'view.html?name=' + name + '&relationship=' + relationship + '&phoneNumber=' + phoneNumber + '&email=' + email + '&birthday=' + birthday;
-                window.location.href = url;
-              }
-            </scripts>
           </tbody>
         </table>
       </div>
