@@ -155,7 +155,7 @@
           </div>
           <script>
             function goToAddPage() {
-              // add.html 페이지로 이동합니다.
+              
               window.location.href = 'add.html';
             }
           </script>
@@ -268,6 +268,19 @@
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
         <script src="dashboard.js"></script>
+        
+        <script>
+          function showDetails(row) {
+            var name = row.cells[0].textContent;
+            var relationship = row.cells[1].textContent;
+            var phoneNumber = row.cells[2].textContent;
+            var email = row.cells[3].textContent;
+            var birthday = row.cells[4].textContent;
+        
+            // view.html로 이동하는 경로를 확인하세요.
+            window.location.href = 'view.html?name=' + name + '&relationship=' + relationship + '&phoneNumber=' + phoneNumber + '&email=' + email + '&birthday=' + birthday;
+          }
+        </script>
         
   </body>
 </html>
