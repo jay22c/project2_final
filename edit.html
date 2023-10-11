@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>연락처 편집</title>
+  </head>
+  <body>
+    <h1>연락처 편집</h1>
+
+    <form action="/update_contact" method="POST" onsubmit="return validateForm()">
+      <label for="name">이름:</label><br>
+      <input type="text" id="name" name="name" value="김철수"><br><br>
+
+      <label for="relationship">관계:</label><br>
+      <input type="text" id="relationship" name="relationship" value="초등학교 동창"><br><br>
+
+      <label for="phoneNumber">전화번호:</label><br>
+      <input type="text" id="phoneNumber" name="phoneNumber" value="010-1234-5678"><br><br>
+
+      <label for="email">이메일:</label><br>
+      <input type="text" id="email" name="email" value="silverwater@never.com"><br><br>
+
+      <label for="birthday">생일:</label><br>
+      <input type="text" id="birthday" name="birthday" value="2/13"><br><br>
+
+      <input type="submit" value="저장">
+    </form>
+
+    <script>
+      function validateForm() {
+        // 필수 필드 확인
+        var name = document.getElementById("name").value;
+        var relationship = document.getElementById("relationship").value;
+        var phoneNumber = document.getElementById("phoneNumber").value;
+
+        if (name === "" || relationship === "" || phoneNumber === "") {
+          alert("이름, 관계, 전화번호는 필수 입력 사항입니다.");
+          return false;
+        }
+
+        alert("저장되었습니다.");
+        return true;
+      }
+    </script>
+  </body>
+</html>
