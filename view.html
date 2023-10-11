@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- head 부분 설정 -->
+  
 </head>
 <body>
   <h1>상세 정보</h1>
@@ -12,7 +12,7 @@
   <p>생일: <span id="birthday"></span></p>
   
   <script>
-    // URL 파라미터에서 데이터 추출
+    
     var urlParams = new URLSearchParams(window.location.search);
     document.getElementById('name').textContent = urlParams.get('name');
     document.getElementById('relationship').textContent = urlParams.get('relationship');
@@ -22,8 +22,6 @@
   </script>
 </body>
 </html>
-이렇게하면 각 행을 클릭하면 해당 항목의 정보를 볼 수 있는 별도의 페이지로 이동합니다. 클릭한 항목에 대한 정보는 URL 파라미터로 전달되고, view.html 페이지에서 URL 파라미터를 읽어와 정보를 표시합니다.
-
 
 
 
