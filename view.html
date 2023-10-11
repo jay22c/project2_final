@@ -10,7 +10,7 @@
     </div>
 
 
-    <!-- <button onclick="editContact()">edit</button> -->
+    <button onclick="editContact()">edit</button>
 
     <script>
       
@@ -42,21 +42,21 @@
                                   '<p><strong>생일:</strong> ' + birthday + '</p>';
 
     
-      // function editContact() {
+      function editContact() {
         
-      //   var name = getQueryVariable('name');
-      //   var relationship = getQueryVariable('relationship');
-      //   var phoneNumber = getQueryVariable('phoneNumber');
-      //   var email = getQueryVariable('email');
-      //   var birthday = getQueryVariable('birthday');
+        var name = getQueryVariable('name');
+        var relationship = getQueryVariable('relationship');
+        var phoneNumber = getQueryVariable('phoneNumber');
+        var email = getQueryVariable('email');
+        var birthday = getQueryVariable('birthday');
 
        
-      //   window.location.href = 'edit.html?name=' + name +
-      //     '&relationship=' + relationship +
-      //     '&phoneNumber=' + phoneNumber +
-      //     '&email=' + email +
-      //     '&birthday=' + birthday;
-      // }
+        window.location.href = 'edit.html?name=' + name +
+          '&relationship=' + relationship +
+          '&phoneNumber=' + phoneNumber +
+          '&email=' + email +
+          '&birthday=' + birthday;
+      }
 
     </script>
   </body>
